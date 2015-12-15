@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'PFDinTextCompProBold';
+  src: url("/font/PFDinTextCompPro-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PFDinTextCompProBold', Impact, Arial;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #000;
+  letter-spacing: -0.02em; }
+
+.brand-logo {
+  margin-top: 3px; }
+  .brand-logo img {
+    height: 28px;
+    margin-left: 15px; }
+
+nav {
+  background-color: black; }
