@@ -19,14 +19,16 @@ h1, h2, h3, h4, h5, h6 {
 nav {
   background-color: black; }
 
-.check-in-button .btn, .check-in-button .btn-large {
+.check-in-form .btn, .check-in-form .btn-large {
   font-size: 1.5em; }
+.check-in-form input[type=email] {
+  text-align: center;
+  font-size: 1.5em;
+  border-bottom: 1px solid #EF5350;
+  box-shadow: 0 1px 0 0 #EF5350; }
 
 .row .col {
   padding: 0; }
-
-input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
-  font-size: 1.5em; }
 
 .check {
   stroke-dasharray: 130px 130px;
