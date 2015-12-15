@@ -3,9 +3,6 @@ var router = express.Router();
 
 var models = require('../server/models/index');
 
-var json2csv = require('json2csv');
-var fs = require('fs');
-
 // GET homepage
 router.get('/', function(req, res) {
   res.render('index');
@@ -20,54 +17,32 @@ router.get('/dashboard', function(req, res) {
     });
   });
 });
-//
-// var fields = ['id', 'email', 'createdAt', 'updatedAt'];
-// var blah = [
-//   {
-//     id: 1,
-//     email: "test@ga.co",
-//     createdAt: "2015-12-15T01:36:42.776Z",
-//     updatedAt: "2015-12-15T01:36:42.776Z"
-//   }, {
-//     id: 2,
-//     email: "test2@ga.co",
-//     createdAt: "2015-12-15T01:36:49.231Z",
-//     updatedAt: "2015-12-15T01:36:49.231Z"
-//   }, {
-//     id: 3,
-//     email: "test3@ga.co",
-//     createdAt: "2015-12-15T01:36:54.364Z",
-//     updatedAt: "2015-12-15T01:36:54.364Z"
-//   }
-// ];
 
+var json2csv = require('json2csv');
+var fs = require('fs');
 
+// GET download of .csv file
+router.get('/download/:event_id', function(req, res) {
+  console.log(req.params.event_id);
+  models.event.find({
+    where: {
+      id: req.params.event_id
+    }
+  }).then(function(events) {
+    var fields = ['id', 'name', 'date', 'createdAt', 'updatedAt'];
 
-router.post('/download', function(req, res) {
-  var fields = ['id', 'email', 'createdAt', 'updatedAt'];
-
-})
-router.get('/download', function(req, res) {
-  models.attendee.findAll({
-  }).then(function(attendees) {
-    var fields = ['id', 'email', 'createdAt', 'updatedAt'];
-    var file = attendees;
-
-      json2csv({ data: JSON.parse(file), fields: fields }, function(err, csv) {
-        if (err) console.log(err);
-        fs.writeFile('attendees3.csv', csv, function(err) {
-          if (err) throw err;
-          console.log('file saved');
-        });
-      });
-//
-//     // JSON.parse(file)
-    // console.log(file);
-//     // res.download(file);
+    json2csv({ data: events, fields: fields }, function(err, csv) {
+      if (err) console.log(err);
+      fs.writeFileSync('attendees.csv', csv);
+      res.download('./attendees.csv');
+      // res.json(events);
+      // res.redirect('/download/csv');
+    });
   });
-//   // var downloadFile = './attendees.csv';
-//   // res.download(downloadFile); // Set disposition and send it.
 });
 
+router.get('/download/csv', function(req, res) {
+  // res.redirect('/dashboard');
+});
 
 module.exports = router;

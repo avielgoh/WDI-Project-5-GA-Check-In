@@ -23,7 +23,7 @@
       </form>
     </div>
     <div id="past-events" class="col s8 offset-s2">
-      <table class="highlight responsive-table bordered">
+      <table class="highlight bordered">
         <thead>
           <tr>
             <th data-field="name">Name</th>
@@ -38,7 +38,7 @@
               <td><%= event.name %></td>
               <td><%= String(event.date).split(' ').slice(0, 4).join(' ') %></td>
               <td>0</td>
-              <td><a class="waves-effect waves-light btn">Export</a></td>
+              <td><a class="waves-effect waves-light btn export-button" data-event-id="<%= event.id %>">Export</a></td>
             </tr>
 	        <% }); %>
         </tbody>

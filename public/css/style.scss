@@ -25,3 +25,25 @@ h1, h2, h3, h4, h5, h6 {
 nav {
   background-color: black;
 }
+
+.check-in-button {
+  .btn, .btn-large {
+    font-size: 1.5em;
+  }
+}
+
+.row .col {
+  padding: 0;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+  font-size: 1.5em;
+}
+
+
+.check {
+  stroke-dasharray: 130px 130px;
+  stroke-dashoffset: 130px;
+  -webkit-transition: stroke-dashoffset 4.1s linear 0s;
+  transition: stroke-dashoffset 500ms ease-in-out;
+}

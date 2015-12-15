@@ -36,7 +36,29 @@
 
 </script> -->
 
+<!-- POST email to attendees table -->
 <script>
+
+  $('.check-in-email').keypress(function(e) {
+    if (e.which == 13) {
+      var options = {
+        type: "POST",
+        url: '/api/attendees',
+        data: { email: $('.check-in-email').val() },
+        dataType: 'json'
+      };
+
+      $.ajax(options).done(function() {
+        $('.check-in-button').html('Enjoy the event').css('background-color', '#009688');
+
+        setTimeout(function() {
+          $('.check-in-email').val('');
+          $('.check-in-button').html('Check in').css('background-color', '#EF5350');;
+        }, 1500);
+      });
+    }
+  });
+
   $('.check-in-button').on('click', function() {
     var options = {
       type: "POST",
@@ -46,7 +68,30 @@
     };
 
     $.ajax(options).done(function() {
-      $('.check-in-email').val('');
+      $('.check-in-button').html('Enjoy the event').css('background-color', '#009688');
+
+      setTimeout(function() {
+        $('.check-in-email').val('');
+        $('.check-in-button').html('Check in').css('background-color', '#EF5350');;
+      }, 1500);
+    });
+  });
+</script>
+
+<!-- GET attendees list -->
+<script>
+  $('.export-button').on('click', function() {
+    var eventId = $(this).data('event-id');
+
+    var options = {
+      type: "GET",
+      url: '/download/' + eventId,
+      dataType: 'json'
+    };
+
+    $.ajax(options).done(function(data) {
+      console.log('hello');
+      console.log(data);
     });
   });
 </script>

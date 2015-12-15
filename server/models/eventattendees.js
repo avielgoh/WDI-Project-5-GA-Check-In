@@ -6,8 +6,8 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        eventAttendees.hasMany(models.attendee);
-        eventAttendees.hasMany(models.event);
+        // eventAttendees.hasMany(models.attendee);
+        // eventAttendees.hasMany(models.event);
       }
     }
   });
