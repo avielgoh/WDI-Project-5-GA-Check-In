@@ -9,8 +9,11 @@ var config    = require(__dirname + '/../config.json')[env];
 var db        = {};
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
+  var sequelize = new Sequelize(process.env.DATABASE_URL, {
+  logging: false,
+  dialectOptions: {
+    ssl: true /* for SSL config since Heroku gives you this out of the box */
+  } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 };
 
@@ -34,8 +37,3 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
-
-// node_modules/.bin/sequelize model:create --name attendee --attributes "email:string, eventId:integer"
-// node_modules/.bin/sequelize model:create --name event --attributes "name:string, date:date"
-
-// node_modules/.bin/sequelize model:create --name eventAttendees --attributes "eventId:integer, attendeeId:integer"
