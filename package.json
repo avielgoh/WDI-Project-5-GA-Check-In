@@ -2,8 +2,7 @@
   "name": "ga-check-in-2",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    node ./bin/www
+  "scripts": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
