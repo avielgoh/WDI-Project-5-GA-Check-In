@@ -12,6 +12,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      event_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      event_name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

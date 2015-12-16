@@ -1,2 +1,2 @@
-"id","name","date","createdAt","updatedAt"
-1,"UNPLUG + PLAY: SUMMER WAREHOUSE PARTY WITH ANDRÁS (DJ SET)","""2015-12-16T13:00:00.000Z""","""2015-12-15T01:37:17.676Z""","""2015-12-15T01:37:17.676Z"""
+"id","email","event_id","event_name","createdAt","updatedAt"
+22,"aviel@ga.co",12,"test","""2015-12-16T07:42:52.050Z""","""2015-12-16T07:42:52.050Z"""

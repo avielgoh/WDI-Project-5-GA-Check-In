@@ -1,49 +1,53 @@
 <% include header %>
 
-  <div class="row">
-    <div class="col s8 offset-s2">
-      <ul class="tabs">
-        <li class="tab col s4"><a class="active" href="#new-event">New Event</a></li>
-        <li class="tab col s4"><a href="#past-events">Past Events</a></li>
-      </ul>
-    </div>
-    <div id="new-event" class="col s8 offset-s2">
-      <form class="col s12" method="post" action="/api/events">
-        <div class="row">
-          <div class="input-field col s12">
-          <input id="event-name" type="text" class="validate" name="eventName" autocomplete="off" required>
-          <label for="event-name">Event name</label>
+  <div class="dashboard">
+    <div class="row">
+      <div class="col s12 col m10 offset-m1 col l8 offset-l2">
+        <ul class="tabs">
+          <li class="tab col s6 col m5 col l4"><a class="active" href="#new-event">New Event</a></li>
+          <li class="tab col s6 col m5 col l4"><a href="#past-events">Past Events</a></li>
+        </ul>
+      </div>
+      <div id="new-event" class="col s10 offset-s1 col m10 offset-m1 col l8 offset-l2">
+        <form class="col s12" method="post" action="/events/new">
+          <div class="row">
+            <div class="input-field col s12 col m12">
+              <input id="event-name" type="text" class="validate" name="eventName" autocomplete="off" required>
+              <label for="event-name">Event name</label>
+            </div>
+            <div class="input-field col s12 col m8">
+              <input type="date" class="datepicker" name="eventDate" required>
+              <label for="event-date">Event date</label>
+            </div>
+            <button class="btn-large waves-effect waves-light col s12 col m3 offset-m1" type="submit" name="action">Create event</button>
           </div>
-          <div class="input-field col s8">
-            <input type="date" class="datepicker" name="eventDate" required>
-            <label for="event-date">Event date</label>
-          </div>
-          <button class="btn-large waves-effect waves-light col s4" type="submit" name="action">Create event</button>
-        </div>
-      </form>
-    </div>
-    <div id="past-events" class="col s8 offset-s2">
-      <table class="highlight bordered">
-        <thead>
-          <tr>
-            <th data-field="name">Name</th>
-            <th data-field="date">Date</th>
-            <th data-field="attendees">Attendees</th>
-            <th data-field="export">Export</th>
-          </tr>
-        </thead>
-        <tbody>
-         <% events.forEach(function(event){ %>
+        </form>
+      </div>
+      <div id="past-events" class="col s10 offset-s1 col m10 offset-m1 col l8 offset-l2">
+        <table class="highlight bordered">
+          <thead>
             <tr>
-              <td><%= event.name %></td>
-              <td><%= String(event.date).split(' ').slice(0, 4).join(' ') %></td>
-              <td>0</td>
-              <td><a class="waves-effect waves-light btn export-button" data-event-id="<%= event.id %>">Export</a></td>
+              <th data-field="name">Name</th>
+              <th data-field="date">Date</th>
+              <th data-field="attendees">Attendees</th>
+              <th data-field="export">Export</th>
+              <th data-field="edit">Delete</th>
             </tr>
-	        <% }); %>
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            <% events.forEach(function(event){ %>
+              <tr>
+                <td><a href="/event/<%= event.id %>" target="_blank"><%= event.name %></a></td>
+                <td><%= String(event.date).split(' ').slice(0, 4).join(' ') %></td>
+                <td class="num-attendes">0</td>
+                <td><a class="waves-effect waves-light btn export-button" href="/download/event/<%= event.id %>"><i class="material-icons">file_download</i></a></td>
+                <td><a class="waves-effect waves-light btn delete-event-button" data-event-id="<%= event.id %>"><i class="material-icons">delete</i></a></td>
+              </tr>
+            <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
   </div>
 
 <% include footer %>

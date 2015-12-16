@@ -5967,13 +5967,13 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #EF5350;
+  background-color: #ff0032;
   text-align: center;
   letter-spacing: .5px;
   transition: .2s ease-out;
   cursor: pointer; }
   .btn:hover, .btn-large:hover {
-    background-color: #ed3c39; }
+    background-color: #e6002d; }
 
 .btn-floating {
   display: inline-block;
@@ -5985,7 +5985,7 @@ small {
   height: 37px;
   line-height: 37px;
   padding: 0;
-  background-color: #EF5350;
+  background-color: #ff0032;
   border-radius: 50%;
   transition: .3s;
   cursor: pointer;
@@ -6384,7 +6384,7 @@ select:focus {
 
 button:focus {
   outline: none;
-  background-color: #f16563; }
+  background-color: #ff1442; }
 
 label {
   font-size: 0.8rem;

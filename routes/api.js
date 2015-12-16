@@ -1,20 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var models = require('../server/models/index'); // database models
 
-// Include database models
-var models = require('../server/models/index');
+// API ROUTES
 
-// POST to create new event
-router.post('/events', function(req, res) {
-  models.event.create({
-    name: req.body.eventName,
-    date: req.body.eventDate
-  }).then(function(event) {
-    res.json(event);
-  });
-});
-
-// GET all events
+// GET - display all events
 router.get('/events', function(req, res) {
   models.event.findAll({
   }).then(function(events) {
@@ -22,7 +12,7 @@ router.get('/events', function(req, res) {
   });
 });
 
-// GET single event
+// GET - display single
 router.get('/events/:id', function(req, res) {
   models.event.find({
     where: {
@@ -34,7 +24,7 @@ router.get('/events/:id', function(req, res) {
 });
 
 // PUT update to single event
-router.put('/events/:id', function(req, res) {
+router.put('/events/update/:id', function(req, res) {
   models.event.find({
     where: {
       id: req.params.id
@@ -42,8 +32,8 @@ router.put('/events/:id', function(req, res) {
   }).then(function(event) {
     if(event){
       event.updateattributes({
-        name: req.body.name,
-        date: req.body.date
+        name: req.body.eventName,
+        date: req.body.eventDate
       }).then(function(event) {
         res.send(event);
       });
@@ -51,25 +41,7 @@ router.put('/events/:id', function(req, res) {
   });
 });
 
-// DELETE a single event
-router.delete('/events/:id', function(req, res) {
-  models.event.destroy({
-    where: {
-      id: req.params.id
-    }
-  }).then(function(event) {
-    res.json(event);
-  });
-});
 
-// POST to create new attendee
-router.post('/attendees', function(req, res) {
-  models.attendee.create({
-    email: req.body.email
-  }).then(function(attendee) {
-    res.json(attendee);
-  });
-});
 
 // GET all events
 router.get('/attendees', function(req, res) {

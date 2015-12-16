@@ -3,7 +3,7 @@
   src: url("/font/PFDinTextCompPro-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: 'PFDinTextCompProBold', Impact, Arial;
   text-transform: uppercase;
   font-weight: normal;
@@ -18,18 +18,56 @@ h1, h2, h3, h4, h5, h6 {
 
 nav {
   background-color: black; }
+  nav #current-time {
+    margin-right: 20px;
+    font-family: 'PFDinTextCompProBold', Impact, Arial;
+    font-size: 1.5rem; }
 
-.check-in-form .btn, .check-in-form .btn-large {
+.tabs {
+  overflow-x: hidden; }
+
+.check-in-screen .btn, .check-in-screen .btn-large {
   font-size: 1.5em; }
-.check-in-form input[type=email] {
+.check-in-screen input[type=email] {
   text-align: center;
   font-size: 1.5em;
-  border-bottom: 1px solid #EF5350;
-  box-shadow: 0 1px 0 0 #EF5350; }
-
-.row .col {
+  border-bottom: 1px solid #ff0032;
+  box-shadow: 0 1px 0 0 #ff0032; }
+.check-in-screen .row .col {
   padding: 0; }
 
+.dashboard {
+  margin-top: 5px; }
+  .dashboard label {
+    left: 0; }
+  .dashboard .row .col {
+    padding: 0; }
+  .dashboard #new-event, .dashboard #past-events {
+    margin-top: 5px; }
+  .dashboard .export-button {
+    padding: 0 1rem; }
+  .dashboard .delete-event-button {
+    padding: 0 1rem; }
+  .dashboard th:nth-child(2), .dashboard th:nth-child(3), .dashboard th:nth-child(4), .dashboard th:nth-child(5) {
+    text-align: center; }
+  .dashboard td:nth-child(2), .dashboard td:nth-child(3), .dashboard td:nth-child(4), .dashboard td:nth-child(5) {
+    text-align: center; }
+
+.check-in-screen {
+  text-align: center;
+  margin-top: 50px; }
+  .check-in-screen h1 {
+    font-size: 10rem; }
+  .check-in-screen h3 {
+    font-size: 4rem; }
+
+@media only screen and (max-width: 600px) {
+  .check-in-screen {
+    margin-top: 10px; }
+    .check-in-screen h1 {
+      font-size: 5.5rem; }
+    .check-in-screen h3 {
+      font-size: 2rem; } }
 .check {
   stroke-dasharray: 130px 130px;
   stroke-dashoffset: 130px;

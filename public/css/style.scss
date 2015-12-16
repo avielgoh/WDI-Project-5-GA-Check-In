@@ -5,7 +5,7 @@
   font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: 'PFDinTextCompProBold', Impact, Arial;
   text-transform: uppercase;
   font-weight: normal;
@@ -24,9 +24,19 @@ h1, h2, h3, h4, h5, h6 {
 
 nav {
   background-color: black;
+
+  #current-time {
+    margin-right: 20px;
+    font-family: 'PFDinTextCompProBold', Impact, Arial;
+    font-size: 1.5rem;
+  }
 }
 
-.check-in-form {
+.tabs {
+  overflow-x: hidden;
+}
+
+.check-in-screen {
   .btn, .btn-large {
     font-size: 1.5em;
   }
@@ -34,14 +44,76 @@ nav {
   input[type=email] {
     text-align: center;
     font-size: 1.5em;
-    border-bottom: 1px solid #EF5350;
-    box-shadow: 0 1px 0 0 #EF5350;
+    border-bottom: 1px solid #ff0032;
+    box-shadow: 0 1px 0 0 #ff0032;
+  }
+
+  .row .col {
+    padding: 0;
+  }
+}
+
+
+.dashboard {
+  margin-top: 5px;
+
+  label {
+    left: 0;
+  }
+
+  .row .col {
+    padding: 0;
+  }
+
+  #new-event, #past-events {
+    margin-top: 5px;
+  }
+
+  .export-button {
+    padding: 0 1rem;
+  }
+
+  .delete-event-button {
+    padding: 0 1rem;
+  }
+
+  th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+    text-align: center;
+  }
+
+  td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+    text-align: center;
+  }
+}
+
+.check-in-screen {
+  text-align: center;
+  margin-top: 50px;
+
+  h1 {
+    font-size: 10rem;
+    // text-shadow: 0px 5px 15px rgba(150, 150, 150, 1);
+  }
+
+  h3 {
+    font-size: 4rem;
+    // text-shadow: 0px 2px 5px rgba(150, 150, 150, 1);
   }
 
 }
 
-.row .col {
-  padding: 0;
+@media only screen and (max-width: 600px) {
+  .check-in-screen {
+    margin-top: 10px;
+
+    h1 {
+      font-size: 5.5rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
 }
 
 .check {

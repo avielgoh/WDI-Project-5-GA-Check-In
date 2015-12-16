@@ -1,18 +1,20 @@
-<div class="row">
-  <div class="col s8 offset-s2">
-    <h1>GENERAL ASSEMBLY PRESENTS: </h1>
-    <h3>UNPLUG + PLAY: SUMMER WAREHOUSE PARTY WITH ANDRÁS (DJ SET)</h3>
+<div class="check-in-screen">
+  <div class="row">
+    <div class="col s10 offset-s1 col m8 offset-m2">
+      <h1>WELCOME</h1>
+      <h3>GA PRESENTS: <span class="event-name"><%= event.name %></span></h3>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col s6 offset-s3 check-in-form">
-    <!-- <form class="check-in-form"> -->
-      <div class="input-field col s12">
-        <input type="email" name="email" autocomplete="off" class="check-in-email" placeholder="Your email address" required>
-        <label for="email" data-error="Please enter a valid email address" data-success="" class="col s12"></label>
-      </div>
-      <button class="btn-large waves-effect waves-light col s12 check-in-button" type="submit" name="action">Check In</button>
-    <!-- </form> -->
+  <div class="row">
+    <div class="col s10 offset-s1 col m4 offset-m4 check-in-form">
+      <form class="check-in-form">
+        <div class="input-field col s12">
+          <input type="email" name="email" autocomplete="off" class="check-in-email" data-event-id="<%= event.id %>" placeholder="Your email address" required>
+          <label for="email" data-error="Please enter a valid email address" data-success="" class="col s12"></label>
+        </div>
+        <button class="btn-large waves-effect waves-light col s12 check-in-button" type="submit" name="action">Check In</button>
+      </form>
+    </div>
   </div>
 </div>

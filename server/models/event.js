@@ -8,13 +8,14 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // event.hasMany(models.attendee);
+        // event.hasMany(models.attendee);
         // event.belongsToMany(models.attendee, {
         //   through: 'eventAttendees',
         //   foreignKey: 'attendeeId'
         // });
-        event.belongsToMany(models.attendee, {
-          through: 'eventAttendees'
-        });
+        // event.belongsToMany(models.attendee, {
+        //   through: 'eventAttendees'
+        // });
       }
     }
   });

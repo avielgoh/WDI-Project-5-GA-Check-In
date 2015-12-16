@@ -8,8 +8,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 
 <!--Import Materialize.js -->
-<script type="text/javascript" src="js/date_picker/picker.js"></script>
-<script type="text/javascript" src="js/date_picker/picker.date.js"></script>
+<script type="text/javascript" src="/js/date_picker/picker.js"></script>
+<script type="text/javascript" src="/js/date_picker/picker.date.js"></script>
 
 <!-- Import Datepicker.js -->
 <script>
@@ -29,69 +29,56 @@
   });
 </script>
 
-<!-- <script>
-  $('.check-in-form').each(function() {
-    this.reset();
-  });
-
-</script> -->
-
 <!-- POST email to attendees table -->
 <script>
+  $('.check-in-form').submit(function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var eventId = $('.check-in-email').data('event-id');
 
-  $('.check-in-email').keypress(function(e) {
-    if (e.which == 13) {
-      var options = {
-        type: "POST",
-        url: '/api/attendees',
-        data: { email: $('.check-in-email').val() },
-        dataType: 'json'
-      };
-
-      $.ajax(options).done(function() {
-        $('.check-in-button').html('Enjoy the event').css('background-color', '#009688');
-
-        setTimeout(function() {
-          $('.check-in-email').val('');
-          $('.check-in-button').html('Check in').css('background-color', '#EF5350');;
-        }, 1500);
-      });
-    }
-  });
-
-  $('.check-in-button').on('click', function() {
     var options = {
       type: "POST",
-      url: '/api/attendees',
-      data: { email: $('.check-in-email').val() },
+      url: '/attendees/new',
+      data: {
+        email: $('.check-in-email').val(),
+        event_id: parseInt(eventId, 10),
+        event_name: $('.event-name').html()
+      },
       dataType: 'json'
     };
 
     $.ajax(options).done(function() {
-      $('.check-in-button').html('Enjoy the event').css('background-color', '#009688');
+      $('.check-in-button').html('Enjoy the event').css('background-color', '#00c775');
+      $('.check-in-email').css('border-bottom', '1px solid #00c775');
+      $('.check-in-email').css('box-shadow', '0 1px 0 0 #00c775');
 
       setTimeout(function() {
         $('.check-in-email').val('');
-        $('.check-in-button').html('Check in').css('background-color', '#EF5350');;
+        $('.check-in-button').html('Check in').css('background-color', '#ff0032');;
+        $('.check-in-email').css('border-bottom', '1px solid #ff0032');
+        $('.check-in-email').css('box-shadow', '0 1px 0 0 #ff0032');
       }, 1500);
     });
   });
 </script>
 
-<!-- GET attendees list -->
+<script src="/js/currentDate.js"></script>
+
 <script>
-  $('.export-button').on('click', function() {
+  $('.delete-event-button').on('click', function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
     var eventId = $(this).data('event-id');
 
     var options = {
-      type: "GET",
-      url: '/download/' + eventId,
-      dataType: 'json'
+      type: "DELETE",
+      url: '/events/delete/' + eventId
     };
 
-    $.ajax(options).done(function(data) {
-      console.log('hello');
-      console.log(data);
+    $.ajax(options).done(function() {
+      // window.location.href = "/dashboard#past-events"
+      window.location.reload();
     });
   });
 </script>
