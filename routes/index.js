@@ -11,10 +11,16 @@ router.get('/', function(req, res) {
 
 // GET - display admin dashboard
 router.get('/dashboard', function(req, res) {
+  var attendeesArray;
+  models.attendee.findAll({
+  }).then(function(attendees) {
+    attendeesArray = attendees;
+  });
   models.event.findAll({
   }).then(function(events) {
     res.render('dashboard', { // render events to dashboard
-      events: events
+      events: events,
+      attendees: attendeesArray
     });
   });
 });
@@ -26,6 +32,7 @@ router.get('/download/event/:event_id', function(req, res) {
       event_id: parseInt(req.params.event_id)
     }
   }).then(function(attendees) {
+    console.log(attendees.length);
     var fields = ['id', 'email', 'event_id', 'event_name', 'createdAt', 'updatedAt'];
 
     // convert JSON from database to csv

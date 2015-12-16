@@ -35,11 +35,17 @@
             </tr>
           </thead>
           <tbody>
-            <% events.forEach(function(event){ %>
+            <% events.forEach(function(event) { %>
+              <% var attendeesCount = 0; %>
+              <% attendees.forEach(function(attendee) { %>
+                <% if (attendee.event_id === event.id) { %>
+                  <% attendeesCount += 1; %>
+                <% }; %>
+              <% }); %>
               <tr>
                 <td><a href="/event/<%= event.id %>" target="_blank"><%= event.name %></a></td>
                 <td><%= String(event.date).split(' ').slice(0, 4).join(' ') %></td>
-                <td class="num-attendes">0</td>
+                <td class="num-attendes"><%= attendeesCount %></td>
                 <td><a class="waves-effect waves-light btn export-button" href="/download/event/<%= event.id %>"><i class="material-icons">file_download</i></a></td>
                 <td><a class="waves-effect waves-light btn delete-event-button" data-event-id="<%= event.id %>"><i class="material-icons">delete</i></a></td>
               </tr>
