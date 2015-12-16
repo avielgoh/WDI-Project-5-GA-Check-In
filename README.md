@@ -12,19 +12,15 @@ Build a dynamic and responsive check in page that does not require a page refres
 
 ## Technologies used
 
-1. Node.js, including the following packages:
-  - Sequelize
-  - json2csv
+1. Node.js
 2. [Express](http://expressjs.com/en/index.html)
-3. Gulp, including:
-  - Live Reload
-  - Nodemon
+3. Gulp
 4. JavaScript, including the following libraries:
   - jQuery
   - Ajax
-5. PostgreSQL
+5. PostgreSQL (including Sequelize)
 6. HTML5
-7. Sass / CSS3 (including MaterializeCSS framework)
+7. Sass / CSS3 (including the Materialize framework)
 8. Heroku hosting
 
 ## Key features
