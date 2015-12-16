@@ -20,6 +20,7 @@ nav {
   background-color: black; }
   nav #current-time {
     margin-right: 20px;
+    margin-top: 3px;
     font-family: 'PFDinTextCompProBold', Impact, Arial;
     font-size: 1.5rem; }
 
@@ -37,7 +38,7 @@ nav {
   padding: 0; }
 
 .dashboard {
-  margin-top: 5px; }
+  margin-top: 25px; }
   .dashboard label {
     left: 0; }
   .dashboard .row .col {
@@ -55,11 +56,13 @@ nav {
 
 .check-in-screen {
   text-align: center;
+  vertical-align: middle;
   margin-top: 50px; }
   .check-in-screen h1 {
-    font-size: 10rem; }
+    font-size: 10rem;
+    text-shadow: 0px 2px 5px #969696; }
   .check-in-screen h3 {
-    font-size: 4rem; }
+    font-size: 3.5rem; }
 
 @media only screen and (max-width: 600px) {
   .check-in-screen {
@@ -67,7 +70,10 @@ nav {
     .check-in-screen h1 {
       font-size: 5.5rem; }
     .check-in-screen h3 {
-      font-size: 2rem; } }
+      font-size: 2rem; }
+
+  nav #current-time {
+    display: none; } }
 .check {
   stroke-dasharray: 130px 130px;
   stroke-dashoffset: 130px;
