@@ -49,13 +49,13 @@ Check out the project site - [http://gacheckin.herokuapp.com](http://gacheckin.h
 
 ##### Wireframe:
 
-![Image of Wireframe]()
+![Image of Wireframe](https://raw.githubusercontent.com/avielgoh/WDI-Project-5-GA-Check-In/master/public/planning/wireframe.jpg)
 
 ##### Database tables:
 
-![Image of Database tables]()
+![Image of Database tables](https://raw.githubusercontent.com/avielgoh/WDI-Project-5-GA-Check-In/master/public/planning/db_tables.png)
 
-##### Challenges:
+## Challenges:
 
 This project was mostly challenging due to the time constraints. I was given 3 days to plan / build the web application as General Assembly wanted to use it for an end-of-year party with over 1000 attendees.
 
