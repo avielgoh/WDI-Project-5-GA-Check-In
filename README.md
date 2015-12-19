@@ -57,7 +57,7 @@ Check out the project site - [http://gacheckin.herokuapp.com](http://gacheckin.h
 
 ##### Presentation:
 
-Link to presentation slides - [https://github.com/avielgoh/WDI-Project-3-Where-To-Now/blob/master/public/planning/Where%20To%20Now.pdf](https://github.com/avielgoh/WDI-Project-5-GA-Check-In/master/public/planning/GA%20Check%20In.pdf)
+Link to presentation slides - [https://github.com/avielgoh/WDI-Project-5-GA-Check-In/blob/master/public/planning/GA%20Check%20In.pdf](https://github.com/avielgoh/WDI-Project-5-GA-Check-In/blob/master/public/planning/GA%20Check%20In.pdf)
 
 ## Challenges:
 
