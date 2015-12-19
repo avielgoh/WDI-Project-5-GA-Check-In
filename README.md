@@ -55,6 +55,8 @@ Check out the project site - [http://gacheckin.herokuapp.com](http://gacheckin.h
 
 ![Image of Database tables](https://raw.githubusercontent.com/avielgoh/WDI-Project-5-GA-Check-In/master/public/planning/db_tables.png)
 
+Link to presentation slides - [https://github.com/avielgoh/WDI-Project-3-Where-To-Now/blob/master/public/planning/Where%20To%20Now.pdf](https://github.com/avielgoh/WDI-Project-5-GA-Check-In/master/public/planning/GA%20Check%20In.pdf)
+
 ## Challenges:
 
 This project was mostly challenging due to the time constraints. I was given 3 days to plan / build the web application as General Assembly wanted to use it for an end-of-year party with over 1000 attendees.
