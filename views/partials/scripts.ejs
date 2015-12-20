@@ -65,20 +65,33 @@
 <script src="/js/currentDate.js"></script>
 
 <script>
-  $('.delete-event-button').on('click', function(e) {
-    e.preventDefault();
-    e.stopImmediatePropagation();
+  $(document).ready(function(){
+    $('.confirm-delete-event-button').on('click', function(e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
 
-    var eventId = $(this).data('event-id');
+      var eventId = $(this).data('event-id');
 
-    var options = {
-      type: "DELETE",
-      url: '/events/delete/' + eventId
-    };
+      var options = {
+        type: "DELETE",
+        url: '/events/delete/' + eventId
+      };
 
-    $.ajax(options).done(function() {
-      // window.location.href = "/dashboard#past-events"
-      window.location.reload();
+      $.ajax(options).done(function() {
+        // window.location.href = "/dashboard#past-events"
+        window.location.reload();
+      });
     });
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('.modal-trigger').leanModal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200 // Transition out duration
+    }); // delete event modal
   });
 </script>

@@ -85,6 +85,13 @@ router.post('/attendees/new', function(req, res) {
 
 // DELETE - delete a single event
 router.delete('/events/delete/:id', function(req, res) {
+  models.attendee.destroy({
+    where: {
+      event_id: req.params.id
+    }
+  }).then(function(attendee) {
+    res.json(attendee);
+  });
   models.event.destroy({
     where: {
       id: req.params.id
