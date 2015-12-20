@@ -35,9 +35,9 @@ Build a dynamic and responsive check in page that does not require a page refres
 
 ## Links
 
-Check out the project site - [http://gacheckin.herokuapp.com](http://gacheckin.herokuapp.com)
+Check out the project site - [http://gacheckindemo.herokuapp.com](http://gacheckindemo.herokuapp.com)
 
-*The live web application as used by General Assembly can be found at:* [TBC](TBC)
+*Note: the live web application as used by General Assembly is hosted elsewhere*
 
 ## Approach / design notes
 
